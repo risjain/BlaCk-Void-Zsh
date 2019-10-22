@@ -52,3 +52,6 @@ fi
 if [ -d "/usr/local/bin" ] ; then
     export PATH="$PATH:/usr/local/bin"
 fi
+
+## Adding the target to the respective ZSHRC file
+ZDOTDIR=~/dotfiles/.zsh

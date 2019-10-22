@@ -1,5 +1,5 @@
 
-##+TITLE:Zsh Settings
+##+TITLE: ZSH Settings
 
 [[https://i.imgur.com/043POEf.png]]
 
@@ -199,12 +199,12 @@ Mac, FreeBSD-based
 
 - *Install*
 #+BEGIN_SRC shell
-git clone https://github.com/risjain/BlaCk-Void-Zsh.git ~/.zsh
+git clone https://github.com/risjai/BlaCk-Void-Zsh.git ~/.zsh
 bash ~/.zsh/BlaCk-Void-Zsh.sh
 #+END_SRC
 Then, *terminal font* set to one of *[[https://github.com/ryanoasis/nerd-fonts][Nerd Fonts]]* (font install's =1= option is =hack nerd font=) && restart.
 
-When you want to use with awesome tmux, Check [[https://github.com/risjain/BlaCk-Void-Tmux/][BlaCk-Void-Tmux]]
+When you want to use with awesome tmux, Check [[https://github.com/BlaCk-Void-Tmux/][BlaCk-Void-Tmux]]
 
 ** 2.2 Others.
 - *Requirements*
@@ -220,7 +220,7 @@ When you want to use with awesome tmux, Check [[https://github.com/risjain/BlaCk
 
 - *Install*
   + Git Clone\\
-    =git clone https://github.com/risjain/BlaCk-Void-Zsh.git ~/.zsh && cd ~/.zsh=
+    =git clone https://github.com/BlaCk-Void-Zsh.git ~/.zsh && cd ~/.zsh=
 
   + zplugin(replace antigen)
     #+BEGIN_SRC shell
@@ -335,7 +335,7 @@ When you want to use with awesome tmux, Check [[https://github.com/risjain/BlaCk
   [[https://fishshell.com/][Fish]]-like history search feature.
 - [[https://github.com/changyuheng/zsh-interactive-cd][Zsh Interactive Cd]]:
   Press tab for completion as usual with fzf.
-- [[https://github.com/risjain/zsh-lazyenv][Zsh Lazyenv]]:
+- [[https://github.com/zsh-lazyenv][Zsh Lazyenv]]:
   Environments for lazy load commands and speed up start up time of zsh.
 - [[https://github.com/jocelynmallon/zshmarks][Zsh Marks]]:
   A port of Bashmarks (simple bookmarking plugin by Todd Werth) for oh-my-zsh 
