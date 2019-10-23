@@ -4,13 +4,19 @@ echo "----------------------------------------"
 echo "         BlaCk-Void Zsh Setup"
 echo "----------------------------------------"
 
+# Storing the default config directory
+set -e
+BVZSH=$( cd "$(dirname "$0")" ; pwd )
+
 ## Creating and setting default directories
 mkdir ~/dotfiles
 mkdir ~/dotfiles/.zsh
 
-zsh_dir=$( ~/dotfiles/.zsh )
-set -e
-BVZSH=$( cd "$(dirname "$0")" ; pwd )
+cd ~/dotfiles/.zsh
+zsh_dir=$( cd "$(dirname "$0")" ; pwd )
+
+# Moving back to the default config directory
+cd $BVZSH
 
 ## Defining the function to create backup for a given file
 set_file()
@@ -26,14 +32,14 @@ set_file()
     echo ""
   else
     echo "$file not found."
-    touch $file
+    sudo touch $file
     echo "$file is created"
     echo ""
   fi
 }
 
 ## Defining the function for installing Dependencies for Mac
-MAC_PACKAGE_NAME="zsh autojump curl python git socat w3m wmctrl ack tmux xdotool"
+MAC_PACKAGE_NAME="zsh autojump curl python git xquartz socat w3m wmctrl ack tmux xdotool"
 
 mac_install()
 {
@@ -112,9 +118,17 @@ set_file $zshrc
 set_file $zshenv
 set_file $zlogin
 
-echo "source $BVZSH/BlaCk-Void.zshrc"         >> $zshrc
-echo "source $BVZSH/BlaCk-Void.zshenv"        >> $zshenv
-echo "source $BVZSH/BlaCk-Void.zlogin"        >> $zlogin
+
+### Copying the latest .zshrc, .zshenv, .zlogin files to the ZSH dotfiles directory
+cp $BVZSH/BlaCk-Void.zshrc $zsh_dir/BlaCk_Void_dir/BlaCk-Void.zshrc
+cp $BVZSH/BlaCk-Void.zshenv $zsh_dir/BlaCk_Void_dir/BlaCk-Void.zshenv
+cp $BVZSH/BlaCk-Void.zlogin $zsh_dir/BlaCk_Void_dir/BlaCk-Void.zlogin
+
+### Updating the zsh configurations to point to the new files
+echo "sudo source $zsh_dir/BlaCk_Void_dir/BlaCk-Void.zshrc"         >> $zshrc
+echo "sudo source $zsh_dir/BlaCk_Void_dir/BlaCk-Void.zshenv"        >> $zshenv
+echo "sudo source $zsh_dir/BlaCk_Void_dir/BlaCk-Void.zlogin"        >> $zlogin
+
 if [ -e $profile ]; then
     cat ~/.profile | tee -a $zprofile
 fi
