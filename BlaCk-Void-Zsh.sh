@@ -127,9 +127,9 @@ cp $BVZSH/BlaCk-Void.zshenv $zsh_dir/BlaCk_Void_dir/BlaCk-Void.zshenv
 cp $BVZSH/BlaCk-Void.zlogin $zsh_dir/BlaCk_Void_dir/BlaCk-Void.zlogin
 
 ### Updating the zsh configurations to point to the new files
-echo "sudo source $zsh_dir/BlaCk_Void_dir/BlaCk-Void.zshrc"         >> $zshrc
-echo "sudo source $zsh_dir/BlaCk_Void_dir/BlaCk-Void.zshenv"        >> $zshenv
-echo "sudo source $zsh_dir/BlaCk_Void_dir/BlaCk-Void.zlogin"        >> $zlogin
+echo "source $zsh_dir/BlaCk_Void_dir/BlaCk-Void.zshrc" | sudo tee -a $zshrc
+echo "source $zsh_dir/BlaCk_Void_dir/BlaCk-Void.zshenv" | sudo tee -a $zshenv
+echo "source $zsh_dir/BlaCk_Void_dir/BlaCk-Void.zlogin" | sudo tee -a $zlogin
 
 if [ -e $profile ]; then
     cat ~/.profile | tee -a $zprofile
