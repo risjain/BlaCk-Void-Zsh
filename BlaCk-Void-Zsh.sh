@@ -39,7 +39,8 @@ set_file()
 }
 
 ## Defining the function for installing Dependencies for Mac
-MAC_PACKAGE_NAME="zsh autojump curl python git xquartz socat w3m wmctrl ack tmux xdotool"
+MAC_PACKAGE_NAME="zsh autojump curl python git socat w3m wmctrl ack tmux xdotool"
+MAC_CASK_PACKAGE_NAME="xquartz"
 
 mac_install()
 {
