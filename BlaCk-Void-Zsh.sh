@@ -11,6 +11,7 @@ BVZSH=$( cd "$(dirname "$0")" ; pwd )
 ## Creating and setting default directories
 mkdir ~/dotfiles
 mkdir ~/dotfiles/.zsh
+mkdir ~/dotfiles/.zsh/BlaCk_Void_dir
 
 cd ~/dotfiles/.zsh
 zsh_dir=$( cd "$(dirname "$0")" ; pwd )
