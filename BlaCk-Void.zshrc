@@ -165,19 +165,19 @@ zplugin light robbyrussell/oh-my-zsh
 
 ##---------- Bundles form the custom repo.
 zplugin light chrissicool/zsh-256color
-zplugin light mafredri/zsh-async
+#zplugin light mafredri/zsh-async ## PLugin to enable initialization of multiple jobs in ZSH
 zplugin light romkatv/powerlevel10k
 
 zplugin ice wait"0a" atload"_zsh_highlight" lucid
-zplugin light zdharma/fast-syntax-highlighting
+zplugin light zdharma/fast-syntax-highlighting                  # Fast syntax highlighting
 zplugin ice wait"0a" compile'{src/*.zsh,src/strategies/*}' atload"_zsh_autosuggest_start" lucid
-zplugin light zsh-users/zsh-autosuggestions
+zplugin light zsh-users/zsh-autosuggestions                     # ZSH autosuggestions
 zplugin ice wait"0b" lucid
-zplugin light hlissner/zsh-autopair
+zplugin light hlissner/zsh-autopair                             # Autopair
 zplugin ice wait"0b" blockf lucid
-zplugin light zsh-users/zsh-completions
+zplugin light zsh-users/zsh-completions                         # Zsh autocompletions and defining custom functions starting with _
 zplugin ice wait"0c" atload"_enhancd-setting" lucid
-zplugin light b4b4r07/enhancd
+zplugin light b4b4r07/enhancd                                   # better way to change directories or lookup from recent
 zplugin ice wait"0c" atload"_zsh-history-substring-search-setting" lucid
 zplugin light zsh-users/zsh-history-substring-search
 
@@ -189,21 +189,24 @@ zplugin ice wait"1b" atload"_fzf-widgets-setting" lucid
 zplugin light ytet5uy4/fzf-widgets
 
 zplugin ice wait"2" lucid
-zplugin light wfxr/forgit
+zplugin light wfxr/forgit ## fzf + git
 zplugin ice wait"2" lucid
-zplugin light peterhurford/up.zsh
+zplugin light peterhurford/up.zsh ## plugin for ....... (cd ....... instead of defining the alias)
 zplugin ice wait"2" lucid
-zplugin light jocelynmallon/zshmarks
+zplugin light jocelynmallon/zshmarks ## Bookmarking the folders
 zplugin ice wait"2" lucid
-zplugin light changyuheng/zsh-interactive-cd
-zplugin ice wait"2" atload"_zsh-notify-setting" lucid
-zplugin light marzocchi/zsh-notify
+zplugin light changyuheng/zsh-interactive-cd ## fzf + cd (to a folder)
+
+## plugin to notify for long running commands in zsh
+#zplugin ice wait"2" atload"_zsh-notify-setting" lucid
+#zplugin light marzocchi/zsh-notify
+
 zplugin ice wait"2" atload"_zsh-lazyenv-setting" lucid
-zplugin light black7375/zsh-lazyenv
+zplugin light black7375/zsh-lazyenv ## Speed up the loading time of zsh
 zplugin ice wait"2" pick"h.sh" lucid
-zplugin light paoloantinori/hhighlighter
+zplugin light paoloantinori/hhighlighter ## highlights words in the output on the terminal
 zplugin ice wait"2" as"program" pick"tldr" lucid
-zplugin light raylee/tldr
+zplugin light raylee/tldr ## use TLDR to get concise help on commands
 
 
 _zpcompinit-custom
