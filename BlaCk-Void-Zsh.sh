@@ -16,6 +16,9 @@ mkdir ~/dotfiles/.zsh/BlaCk_Void_dir
 # Copying the latest setting files to the respective directory
 cp -a * ~/dotfiles/.zsh/BlaCk_Void_dir
 
+cd ~/dotfiles
+dotfiles_dir=$( cd "$(dirname "$0")" ; pwd )
+
 cd ~/dotfiles/.zsh
 zsh_dir=$( cd "$(dirname "$0")" ; pwd )
 
@@ -123,7 +126,6 @@ set_file $zshrc
 set_file $zshenv
 set_file $zlogin
 
-
 ### Copying the latest .zshrc, .zshenv, .zlogin files to the ZSH dotfiles directory
 cp $BVZSH/BlaCk-Void.zshrc $zsh_dir/BlaCk_Void_dir/BlaCk-Void.zshrc
 cp $BVZSH/BlaCk-Void.zshenv $zsh_dir/BlaCk_Void_dir/BlaCk-Void.zshenv
@@ -133,6 +135,20 @@ cp $BVZSH/BlaCk-Void.zlogin $zsh_dir/BlaCk_Void_dir/BlaCk-Void.zlogin
 echo "source $zsh_dir/BlaCk_Void_dir/BlaCk-Void.zshrc" | sudo tee -a $zshrc
 echo "source $zsh_dir/BlaCk_Void_dir/BlaCk-Void.zshenv" | sudo tee -a $zshenv
 echo "source $zsh_dir/BlaCk_Void_dir/BlaCk-Void.zlogin" | sudo tee -a $zlogin
+
+### Specifying the default theme
+echo "" | sudo tee -a $zshrc
+echo "# To customize prompt, run `p10k configure` or edit ~/dotfiles/.zsh/.p10k.zsh" | sudo tee -a $zshrc
+echo "[[ ! -f ~/dotfiles/.zsh/.p10k.zsh ]] || source ~/dotfiles/.zsh/.p10k.zsh" | sudo tee -a $zshrc
+echo "" | sudo tee -a $zshrc
+
+## Exporting the default environment variables
+echo "" | sudo tee -a $zshrc
+echo "# Default Environment Variables" | sudo tee -a $zshrc
+#echo "export BVZSH=$BVZSH" | sudo tee -a $zshrc
+echo "export dotfiles_dir=$dotfiles_dir" | sudo tee -a $zshrc
+echo "export zsh_dir=$zsh_dir" | sudo tee -a $zshrc
+echo "" | sudo tee -a $zshrc
 
 if [ -e $profile ]; then
     cat ~/.profile | tee -a $zprofile
@@ -156,3 +172,5 @@ echo ""
 
 echo "command: zsh-help"
 echo "for BlaCk-Void Zsh update"
+
+
