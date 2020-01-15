@@ -161,6 +161,11 @@ else
     sed -i    "/[zZ]plugin/d" $zshrc
 fi
 
+# Redirect the Zsource files to the new folder
+src_zshenv=$/.zshenv
+set_file $src_zshenv
+echo "ZDOTDIR=~/dotfiles/.zsh" | sudo tee -a $src_zshenv
+
 ## Change the default shell
 echo "-------"
 echo "ZSH as the default shell(need sudo permission)"
@@ -172,8 +177,3 @@ echo ""
 
 echo "command: zsh-help"
 echo "for BlaCk-Void Zsh update"
-
-# Redirect the Zsource files to the new folder
-src_zshenv=$/.zshenv
-set_file $src_zshenv
-echo "ZDOTDIR=~/dotfiles/.zsh" | sudo tee -a $src_zshenv
