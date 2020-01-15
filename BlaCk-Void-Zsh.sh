@@ -162,7 +162,7 @@ else
 fi
 
 # Redirect the Zsource files to the new folder
-src_zshenv=$/.zshenv
+src_zshenv=~/.zshenv
 set_file $src_zshenv
 echo "ZDOTDIR=~/dotfiles/.zsh" | sudo tee -a $src_zshenv
 
