@@ -17,10 +17,10 @@ case $- in
 esac
 
 ##-------------------------Zplugin set-------------------------
-ZPLGIN_BIN=~/.zplugin/bin/zplugin.zsh
+ZPLGIN_BIN=~/.zinit/bin/zinit.zsh
 source $ZPLGIN_BIN
-autoload -Uz _zplugin
-(( ${+_comps} )) && _comps[zplugin]=_zplugin
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
 autoload -Uz cdr
 autoload -Uz chpwd_recent_dirs
 
@@ -128,8 +128,8 @@ _zsh-lazyenv-setting() {
 
 ##-------------------------Plugin Load
 ##---------- Bundles from the oh-my-zsh.
-# https://github.com/zdharma/zplugin/issues/119
-ZSH="$HOME/.zplugin/plugins/robbyrussell---oh-my-zsh/"
+# https://github.com/zdharma/zinit/issues/119
+ZSH="$HOME/.zinit/plugins/robbyrussell---oh-my-zsh/"
 local _OMZ_SOURCES=(
     # Libs
     lib/compfix.zsh
@@ -158,59 +158,59 @@ if [[ $TMUX_ENABLE ]]; then
     )
 fi
 
-zplugin ice from"gh" pick"/dev/null" nocompletions blockf lucid \
+zinit ice from"gh" pick"/dev/null" nocompletions blockf lucid \
         multisrc"${_OMZ_SOURCES}" compile"(${(j.|.)_OMZ_SOURCES})" \
         atinit"_zpcompinit-custom; zpcdreplay" atload"_OMZ_SETTING" wait"1c"
-zplugin light robbyrussell/oh-my-zsh
+zinit light robbyrussell/oh-my-zsh
 
 ##---------- Bundles form the custom repo.
-zplugin light chrissicool/zsh-256color
-#zplugin light mafredri/zsh-async ## PLugin to enable initialization of multiple jobs in ZSH
-zplugin light romkatv/powerlevel10k
+zinit light chrissicool/zsh-256color
+#zinit light mafredri/zsh-async ## PLugin to enable initialization of multiple jobs in ZSH
+zinit light romkatv/powerlevel10k
 
-zplugin ice wait"0a" atload"_zsh_highlight" lucid
-zplugin light zdharma/fast-syntax-highlighting                  # Fast syntax highlighting
-zplugin ice wait"0a" compile'{src/*.zsh,src/strategies/*}' atload"_zsh_autosuggest_start" lucid
-zplugin light zsh-users/zsh-autosuggestions                     # ZSH autosuggestions
-zplugin ice wait"0b" lucid
-zplugin light hlissner/zsh-autopair                             # Autopair
-zplugin ice wait"0b" blockf lucid
-zplugin light zsh-users/zsh-completions                         # Zsh autocompletions and defining custom functions starting with _
-zplugin ice wait"0c" atload"_enhancd-setting" lucid
-zplugin light b4b4r07/enhancd                                   # better way to change directories or lookup from recent
-zplugin ice wait"0c" atload"_zsh-history-substring-search-setting" lucid
-zplugin light zsh-users/zsh-history-substring-search
+zinit ice wait"0a" atload"_zsh_highlight" lucid
+zinit light zdharma/fast-syntax-highlighting                  # Fast syntax highlighting
+zinit ice wait"0a" compile'{src/*.zsh,src/strategies/*}' atload"_zsh_autosuggest_start" lucid
+zinit light zsh-users/zsh-autosuggestions                     # ZSH autosuggestions
+zinit ice wait"0b" lucid
+zinit light hlissner/zsh-autopair                             # Autopair
+zinit ice wait"0b" blockf lucid
+zinit light zsh-users/zsh-completions                         # Zsh autocompletions and defining custom functions starting with _
+zinit ice wait"0c" atload"_enhancd-setting" lucid
+zinit light b4b4r07/enhancd                                   # better way to change directories or lookup from recent
+zinit ice wait"0c" atload"_zsh-history-substring-search-setting" lucid
+zinit light zsh-users/zsh-history-substring-search
 
-zplugin ice wait"1a" atload"_alias-tip-setting" lucid
-zplugin light djui/alias-tips
-zplugin ice wait"1b" atload"_zsh-git-smart-commands-setting" blockf lucid
-zplugin light seletskiy/zsh-git-smart-commands
-zplugin ice wait"1b" atload"_fzf-widgets-setting" lucid
-zplugin light ytet5uy4/fzf-widgets
+zinit ice wait"1a" atload"_alias-tip-setting" lucid
+zinit light djui/alias-tips
+zinit ice wait"1b" atload"_zsh-git-smart-commands-setting" blockf lucid
+zinit light seletskiy/zsh-git-smart-commands
+zinit ice wait"1b" atload"_fzf-widgets-setting" lucid
+zinit light ytet5uy4/fzf-widgets
 
-zplugin ice wait"2" lucid
-zplugin light wfxr/forgit ## fzf + git
-zplugin ice wait"2" lucid
-zplugin light peterhurford/up.zsh ## plugin for ....... (cd ....... instead of defining the alias)
-zplugin ice wait"2" lucid
-zplugin light jocelynmallon/zshmarks ## Bookmarking the folders
-zplugin ice wait"2" lucid
-zplugin light changyuheng/zsh-interactive-cd ## fzf + cd (to a folder)
+zinit ice wait"2" lucid
+zinit light wfxr/forgit ## fzf + git
+zinit ice wait"2" lucid
+zinit light peterhurford/up.zsh ## plugin for ....... (cd ....... instead of defining the alias)
+zinit ice wait"2" lucid
+zinit light jocelynmallon/zshmarks ## Bookmarking the folders
+zinit ice wait"2" lucid
+zinit light changyuheng/zsh-interactive-cd ## fzf + cd (to a folder)
 
 ## plugin to notify for long running commands in zsh
-#zplugin ice wait"2" atload"_zsh-notify-setting" lucid
-#zplugin light marzocchi/zsh-notify
+#zinit ice wait"2" atload"_zsh-notify-setting" lucid
+#zinit light marzocchi/zsh-notify
 
-zplugin ice wait"2" atload"_zsh-lazyenv-setting" lucid
-zplugin light black7375/zsh-lazyenv ## Speed up the loading time of zsh
-zplugin ice wait"2" pick"h.sh" lucid
-zplugin light paoloantinori/hhighlighter ## highlights words in the output on the terminal
-zplugin ice wait"2" as"program" pick"tldr" lucid
-zplugin light raylee/tldr ## use TLDR to get concise help on commands
+zinit ice wait"2" atload"_zsh-lazyenv-setting" lucid
+zinit light black7375/zsh-lazyenv ## Speed up the loading time of zsh
+zinit ice wait"2" pick"h.sh" lucid
+zinit light paoloantinori/hhighlighter ## highlights words in the output on the terminal
+zinit ice wait"2" as"program" pick"tldr" lucid
+zinit light raylee/tldr ## use TLDR to get concise help on commands
 
 
 _zpcompinit-custom
-zplugin cdreplay -q
+zinit cdreplay -q
 
 ##-------------------------From bashrc-------------------------
 ## enable color support of ls and also add handy aliases
