@@ -144,6 +144,7 @@ echo "source $zsh_dir/BlaCk_Void_dir/BlaCk-Void.zlogin" | sudo tee -a $zlogin
 
 ### Specifying the default theme
 echo "" | sudo tee -a $zshrc
+cp $BVZSH/my_zsh_conf/.p10k.zsh $zsh_dir
 echo "# To customize prompt, run `p10k configure` or edit ~/dotfiles/.zsh/.p10k.zsh" | sudo tee -a $zshrc
 echo "[[ ! -f ~/dotfiles/.zsh/.p10k.zsh ]] || source ~/dotfiles/.zsh/.p10k.zsh" | sudo tee -a $zshrc
 echo "" | sudo tee -a $zshrc
@@ -178,8 +179,6 @@ echo "ZSH as the default shell(need sudo permission)"
 chsh -s $(which zsh)
 
 echo "Please relogin session or restart terminal"
+echo "====== run p10k configure if the icons don't show up as expected ======"
 echo "The End!!"
 echo ""
-
-echo "command: zsh-help"
-echo "for BlaCk-Void Zsh update"
