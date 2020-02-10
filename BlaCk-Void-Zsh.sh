@@ -132,7 +132,6 @@ cp $BVZSH/BlaCk-Void.zshenv $zsh_dir/BlaCk_Void_dir/BlaCk-Void.zshenv
 cp $BVZSH/BlaCk-Void.zlogin $zsh_dir/BlaCk_Void_dir/BlaCk-Void.zlogin
 
 # Add the default aliases to the zsh configuration
-cp $BVZSH/.aliases $zsh_dir/ # copying the aliases to the configuration file
 echo "source $zsh_dir/.aliases" | sudo tee -a $zshrc
 source $HOME/.zshenv ## Reload ZSH environment
 
